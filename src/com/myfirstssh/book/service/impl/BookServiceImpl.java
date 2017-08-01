@@ -13,22 +13,21 @@ import com.myfirstssh.common.dao.impl.BaseDaoImpl;
 import com.myfirstssh.common.pagination.PaginationResponse;
 import com.myfirstssh.common.pagination.QueryCondition;
 
-public class BookServiceImpl extends BaseDaoImpl<Book> implements BookService {
-	
+public class BookServiceImpl extends BaseDaoImpl<Book>implements BookService {
+
 	@Autowired
 	BookDao bookDao;
+
 	@Override
 	public BaseDao getDao() {
 		// TODO Auto-generated method stub
 		return bookDao;
 	}
+
 	@Override
 	public PaginationResponse<BookVO> getBookList(List<QueryCondition> cons, int pageIndex, int pageSize) {
-		
+
 		return bookDao.getBookList(cons, pageIndex, pageSize);
 	}
-
-
-	
 
 }
