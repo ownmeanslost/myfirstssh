@@ -25,11 +25,12 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao{
 		String strSql = "select * from  " + getTableName();
 		String countSql = "select count(*) from " + getTableName();
 		
-		//int beginIndex = (pageIndex) * pageSize;
-		//strSql += " limit " + beginIndex + ", " + pageSize;
+		int beginIndex = (pageIndex) * pageSize;
+		strSql += " limit " + beginIndex + ", " + pageSize;
 		List<Map<String, Object>> list = jdbcTemplate.queryForList(strSql);
 		
 		int total = jdbcTemplate.queryForInt(countSql);
+		result.setTotal(total);
 		List<BookVO> vos= new ArrayList<BookVO>();
 		for(Map<String,Object> map:list){
 			BookVO vo =new BookVO();
@@ -37,7 +38,7 @@ public class BookDaoImpl extends BaseDaoImpl<Book> implements BookDao{
 			vo.setName(getMapValue("name", map));
 			vos.add(vo);
 		}
-		result.setTotal(total);
+		
 		result.setRows(vos);
 		
 		return result;
