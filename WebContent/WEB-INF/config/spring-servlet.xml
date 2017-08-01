@@ -28,5 +28,5 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 		<!-- 表示当访问主页时自动转发到login控制器 -->
-	<mvc:view-controller path="/" view-name="redirect:BookDemo/SayHello"/>
+	<mvc:view-controller path="/" view-name="redirect:Login"/>
 </beans>		
