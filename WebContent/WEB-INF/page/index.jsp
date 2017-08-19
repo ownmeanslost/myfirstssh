@@ -20,4 +20,4 @@
 	</table>
 	<script type="text/javascript" src="page/index.js"></script>
 </body>
-</html
+</html>
