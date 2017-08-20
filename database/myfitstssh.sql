@@ -27,6 +27,72 @@ INSERT INTO `book` VALUES ('7', '刑法');
 INSERT INTO `book` VALUES ('8', '宪法');
 
 -- ----------------------------
+-- Table structure for c3p0testtable
+-- ----------------------------
+DROP TABLE IF EXISTS `c3p0testtable`;
+CREATE TABLE `c3p0testtable` (
+  `a` char(1) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of c3p0testtable
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for educate
+-- ----------------------------
+DROP TABLE IF EXISTS `educate`;
+CREATE TABLE `educate` (
+  `Guid` varchar(255) NOT NULL,
+  `school` varchar(255) DEFAULT NULL,
+  `major` varchar(255) DEFAULT NULL,
+  `graducateTime` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL COMMENT '学历',
+  `userguid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Guid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of educate
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for kill
+-- ----------------------------
+DROP TABLE IF EXISTS `kill`;
+CREATE TABLE `kill` (
+  `Guid` varchar(255) NOT NULL,
+  `content` text,
+  PRIMARY KEY (`Guid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of kill
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for projectexp
+-- ----------------------------
+DROP TABLE IF EXISTS `projectexp`;
+CREATE TABLE `projectexp` (
+  `Guid` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL COMMENT '项目名称',
+  `role` varchar(255) DEFAULT NULL,
+  `startTime` datetime DEFAULT NULL,
+  `lastTime` datetime DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL COMMENT '项目类型',
+  `tutor` varchar(255) DEFAULT NULL COMMENT '指导人',
+  `content` varchar(255) DEFAULT NULL COMMENT '负责内容',
+  `projectcontent` text,
+  `userGuid` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Guid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of projectexp
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for scanpolicy
 -- ----------------------------
 DROP TABLE IF EXISTS `scanpolicy`;
@@ -79,4 +145,23 @@ CREATE TABLE `scantask` (
 
 -- ----------------------------
 -- Records of scantask
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for uerinfo
+-- ----------------------------
+DROP TABLE IF EXISTS `uerinfo`;
+CREATE TABLE `uerinfo` (
+  `Guid` varchar(255) NOT NULL,
+  `username` varchar(30) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `telephone` varchar(255) DEFAULT NULL,
+  `intention` varchar(255) DEFAULT NULL COMMENT '意向',
+  `address` varchar(255) DEFAULT NULL,
+  `imgurl` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Guid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of uerinfo
 -- ----------------------------
