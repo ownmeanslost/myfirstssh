@@ -9,14 +9,14 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 		
 		
-	<context:component-scan base-package="com.myfirstssh.book.controller"/>
+	<context:component-scan base-package="com.myfirstssh.*.controller"/>
 	<!-- 开启注解 -->
 	 <mvc:annotation-driven />   
 	<!-- 静态资源映射，要把所有静态资源都存放在res目录下 -->
 	<mvc:resources location="/WEB-INF/page/" mapping="page/**"/>
 	<mvc:resources location="/WEB-INF/res/" mapping="res/**"/>	
 	<mvc:resources location="/WEB-INF/scripts/" mapping="scripts/**"/>
-	<mvc:resources location="/WEB-INF/files/" mapping="files/**"/>
+	<mvc:resources location="/WEB-INF/file/" mapping="file/**"/>
 	<mvc:resources location="/WEB-INF/res_new/" mapping="res_new/**"/>
 	<mvc:default-servlet-handler/>	
 	

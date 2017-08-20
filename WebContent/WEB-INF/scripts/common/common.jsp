@@ -14,7 +14,7 @@
 <title>common</title>
 
 <script type="text/javascript">
-window.history.forward(-1);
+/* window.history.forward(-1); */
 window.onbeforeunload = function (){};
 var contextPath = "<%=path%>";
 </script>
