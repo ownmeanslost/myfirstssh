@@ -84,14 +84,17 @@
 		 var telephone= $("#telephone").val();
 		 var intention= $("#intention").val();
 		 var address= $("#address").val();
+		 var projectContent=$('#projectContent').summernote('code');
+		 alert(projectContent);
 		 var picturename="";
 		 picturename=$("#inputfile").val().substring($("#inputfile").val().indexOf('.'),$("#inputfile").val().length).toUpperCase();
-		 if (picturename ==".JPG"  || picturename ==".PNG" || picturename =="" || picturename==".BMP"|| picturename==".JPEG") {
+		 /*if (picturename ==".JPG"  || picturename ==".PNG" || picturename =="" || picturename==".BMP"|| picturename==".JPEG") {
 		        $.ajax({
 		            type: 'post',
 		            url: contextPath + '/resume/adduserinfo',
 		            data: {
 		            	name:$("#inputfile").val(),
+		            	
 		            },
 		            success: function (data) {
 		                fishId = data;
@@ -105,7 +108,7 @@
 		    }else {
 		        alert("只能上传.jpg，.png，.PNG,.JPG,bmp,jpeg格式的图片");
 		        return false;
-		    }
+		    }*/
 		
 		 
 		 

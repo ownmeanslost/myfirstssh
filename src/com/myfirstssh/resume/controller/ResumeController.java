@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.myfirsstssh.common.utils.UploadFileUtils;
+
 @Controller
 @RequestMapping("/resume")
 public class ResumeController {
@@ -41,7 +43,14 @@ public class ResumeController {
 	@RequestMapping(value="/loadpicture",method=RequestMethod.POST)
 	public @ResponseBody String loadPicture(Integer id, MultipartHttpServletRequest request, @RequestParam MultipartFile[] inputfile){
 		
-		System.out.println("123");
+		 String pictureurl =""; 
+		 pictureurl=pictureurl+UploadFileUtils.uploadImage(request,inputfile[0]);
+		 if(pictureurl!=null&&pictureurl.length()>0){
+             System.out.println("上传成功！"+pictureurl); //
+           
+         }else {
+             System.out.println("上传失败！");
+         }
 		return "0";
 		
 	}

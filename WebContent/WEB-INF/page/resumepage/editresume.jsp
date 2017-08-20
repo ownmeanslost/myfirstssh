@@ -188,13 +188,7 @@
 				</div>
 
 			</div>
-			<div class="form-group">
-				<label for="projectContent" class="col-sm-2 col-xs-12 control-label">项目内容</label>
-				<div class="col-sm-8 col-xs-12">
-					<input type="text" class="form-control" id="projectContent"
-						placeholder="请输入项目内容">
-				</div>
-			</div>
+			
 			<div class="form-group">
 				<label for="projectContent" class="col-sm-2 col-xs-12 control-label">项目内容</label>
 				<div class="col-sm-12 col-xs-12">
