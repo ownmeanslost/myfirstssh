@@ -33,16 +33,16 @@ public class ResumeController {
 	@RequestMapping(value="/adduserinfo", method=RequestMethod.POST)
 	public @ResponseBody Integer addUserInfo(HttpServletRequest request){
 		String name=request.getParameter("name");
-		System.out.println(name);
+		//System.out.println(name);
 		return 0;
 	}
 	
 	//图片上传
 	@RequestMapping(value="/loadpicture",method=RequestMethod.POST)
-	public @ResponseBody Integer loadPicture(Integer id, MultipartHttpServletRequest request, @RequestParam MultipartFile[] fish_file){
+	public @ResponseBody String loadPicture(Integer id, MultipartHttpServletRequest request, @RequestParam MultipartFile[] inputfile){
 		
-		System.out.println(fish_file[0]);
-		return 1;
+		System.out.println("123");
+		return "0";
 		
 	}
 	

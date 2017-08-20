@@ -27,6 +27,8 @@
 		<property name="prefix" value="/WEB-INF/page/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+p:maxUploadSize="5120000" p:maxInMemorySize="512" />
 		<!-- 表示当访问主页时自动转发到login控制器 -->
 	<mvc:view-controller path="/" view-name="redirect:Login"/>
 </beans>		

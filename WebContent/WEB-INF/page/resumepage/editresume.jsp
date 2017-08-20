@@ -82,7 +82,7 @@
 			<div class="form-group ">
 				<label for="inputfile" class="col-sm-2 col-xs-12 control-label ">照片输入</label>
 				<div class="col-sm-8 col-xs-12">
-				<input id="inputfile"type="file" class="file">
+				<input id="inputfile" name="inputfile" type="file" multiple  class="file"  data-show-upload="false" data-show-caption="true">
 				</div>
 			</div>
 			<button type="button"

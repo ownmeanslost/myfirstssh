@@ -66,11 +66,11 @@
             obj.id = fishId;
             return obj;
         }
-        }).on("fileuploaded", function (e, data) {
+        }).on("filebatchuploadsuccess", function (event, data) {
+        	
             var res = data.response;
-            if (res.state > 0) {
+            if (res) {
                 alert('上传成功');
-                alert(res.path);
             }
             else {
                 alert('上传失败')
