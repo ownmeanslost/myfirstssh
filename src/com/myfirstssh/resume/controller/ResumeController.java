@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.myfirsstssh.common.utils.UploadFileUtils;
+import com.myfirstssh.resume.vo.TraditionTemplateVO;
 
 @Controller
 @RequestMapping("/resume")
@@ -32,10 +33,13 @@ public class ResumeController {
 	public String goToCreateResume(){
 		return "resumepage/createresume";
 	}
+	
+	//添加个人信息，图片除外
 	@RequestMapping(value="/adduserinfo", method=RequestMethod.POST)
-	public @ResponseBody Integer addUserInfo(HttpServletRequest request){
-		String name=request.getParameter("name");
-		//System.out.println(name);
+	public @ResponseBody Integer addUserInfo(TraditionTemplateVO traditionTemplateVO){
+		//用对象接受前台传过来的值
+		String name=traditionTemplateVO.getStartTime();
+		System.out.println(name);
 		return 0;
 	}
 	

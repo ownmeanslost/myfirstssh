@@ -131,11 +131,12 @@
 			<div class="form-group">
 				<label for="startTime" class="control-label col-sm-2 col-xs-2">开始时间</label>
 				<div class="date form_date col-sm-8 col-xs-12" data-date=""
-					data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+					data-date-format="yyyy-mm-dd" data-link-field="dtp_input2"
 					data-link-format="yyyy-mm-dd">
 					<input size="16" type="text" value="" readonly id="startTime">
 					<span class="add-on"><i class="icon-remove"></i></span> <span
 						class="add-on"><i class="icon-th"></i></span>
+						
 				</div>
 
 
@@ -143,11 +144,12 @@
 			<div class="form-group">
 				<label for="lastTime" class="control-label col-sm-2 col-xs-2">结束时间</label>
 				<div class="date form_date col-sm-8 col-xs-12" data-date=""
-					data-date-format="dd MM yyyy" data-link-field="dtp_input2"
+					data-date-format="dd MM yyyy" data-link-field="dtp_input1"
 					data-link-format="yyyy-mm-dd">
 					<input size="16" type="text" value="" readonly id="lastTime">
 					<span class="add-on"><i class="icon-remove"></i></span> <span
 						class="add-on"><i class="icon-th"></i></span>
+						 <input type="hidden" id="dtp_input1"   /><br/>
 				</div>
 
 
@@ -202,7 +204,7 @@
 			</button>
 
 			<div class="form-group">
-				<label for="address" class="col-sm-2 col-xs-12 control-label">技能与荣誉编辑</label>
+				<label for="killcontent" class="col-sm-2 col-xs-12 control-label">技能与荣誉编辑</label>
 				<div class="col-sm-12 col-xs-12">
 					<div id="killcontent" class="summernote">技能与荣誉编辑</div>
 				</div>
