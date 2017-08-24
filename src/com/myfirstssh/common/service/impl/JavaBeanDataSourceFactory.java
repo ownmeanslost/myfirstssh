@@ -21,6 +21,8 @@ public class JavaBeanDataSourceFactory {
 	
 	private static  BaseDataSourceFactory getBaseDataSourceFactory(String beanJson,Map<String, Object> parameter){
 		BaseDataSourceFactory baseDataSourceFactory=null;
+		/*{"clazz":"com.vrv.soc.report.service.impl.MapRegionJRDataSourceFactoryImpl",
+		 * "args":[{"index":"1","key":"securityId","clazzType":"java.lang.String"}]}*/
 		if (StringUtils.isEmpty(beanJson)) {
 			throw new RuntimeException("使用javabean填充数据，beanJson不能为空");
 		}
@@ -48,13 +50,7 @@ public class JavaBeanDataSourceFactory {
 						}
 					}
 				}
-			
-				for (int index = 0; index < list.size(); index++) {
-					BeanArgsVO beanArgsVO = list.get(index);
-					if (beanArgsVO.getIndex().equals(String.valueOf(index + 1))) {
-						
-					}
-				}
+				//调用有参构造
 				Constructor<?> cons = clazz.getDeclaredConstructor(cl);
 				baseDataSourceFactory = (BaseDataSourceFactory) cons.newInstance(ps);
 			}catch(Exception e){

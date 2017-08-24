@@ -3,6 +3,11 @@ package com.myfirstssh.resume.vo;
 public class BeanArgsVO {
 	private String index;
 	private String key;
+	
+	private String clazzType;
+	private String defVal;
+	
+	
 	public String getIndex() {
 		return index;
 	}
@@ -27,6 +32,5 @@ public class BeanArgsVO {
 	public void setDefVal(String defVal) {
 		this.defVal = defVal;
 	}
-	private String clazzType;
-	private String defVal;
+	
 }
