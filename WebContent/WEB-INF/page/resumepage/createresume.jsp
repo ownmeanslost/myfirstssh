@@ -27,13 +27,13 @@
 <body>
 	<div class=container>
 		<h1 >请点击图片</h1>
-		<div class="row">
-			<div class="col-sm-12 col-md-4">
-				<a href="resume/gotoeditresume" class="thumbnail"> <img
+			<ul class="thumbnail col-sm-12 col-md-4" >
+				<li >
+				<a href="resume/gotoeditresume"> <img
 					src="file/resumeimg/2017-08-20_110030.png" alt="通用的占位符缩略图">
 				</a>
-			</div>
-		</div>
+				</li>
+			</ul>	
 	</div>
 </body>
 </html>
