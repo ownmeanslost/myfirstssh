@@ -32,5 +32,16 @@ public class BeanArgsVO {
 	public void setDefVal(String defVal) {
 		this.defVal = defVal;
 	}
+	public BeanArgsVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public BeanArgsVO(String index, String key, String clazzType, String defVal) {
+		super();
+		this.index = index;
+		this.key = key;
+		this.clazzType = clazzType;
+		this.defVal = defVal;
+	}
 	
 }

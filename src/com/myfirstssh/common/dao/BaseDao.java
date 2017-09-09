@@ -10,4 +10,8 @@ public abstract interface BaseDao<T> {
 	 * @return
 	 */
 	public String getTableName();
+	
+	public Serializable save(T entity);
+
+	public void update(T entity) ;
 }

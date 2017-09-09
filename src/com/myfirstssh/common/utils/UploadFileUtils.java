@@ -1,12 +1,16 @@
-package com.myfirsstssh.common.utils;
+package com.myfirstssh.common.utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.myfirstssh.resume.model.UserInfo;
+import com.myfirstssh.resume.service.UserInfoService;
 
 
 
@@ -19,20 +23,29 @@ public class UploadFileUtils {
      * @param
      * @return 完整文件路径
      */
-    public static String uploadImage(MultipartHttpServletRequest request, MultipartFile file) {
-        String rootUrl="F"+"://"+"plantpictureurl/";//根目录，
+    public static String uploadImage(MultipartHttpServletRequest request, MultipartFile file,String id) {
+    	
+    	String rootUrl=request.getSession().getServletContext().getRealPath(File.separator+"WEB-INF"+File.separator+"file"+File.separator+"userpictury"+File.separator);
+    	//String rootUrl="F"+"://"+"plantpictureurl/";//根目录，
         //上传
         try {
-            String[] typeImg={"png","jpg"};
-
             if(file!=null){
                 String origName=file.getOriginalFilename();// 文件原名称
-                System.out.println("上传的文件原名称:"+origName);
+                //文件新名
+         
+                String newName=id+"."+origName.split("\\.")[origName.split("\\.").length-1];
+                
+                System.out.println("上传的文件新名称:"+newName);
                         //存放图片文件的路径
                         String fileSrc="";
                         try{
                         	//一种方法
-                        	File uploadedFile = new File(rootUrl,origName);
+                        	File uploadedFile = new File(rootUrl,newName);
+                        	System.out.println(uploadedFile.getPath());
+                        	File fileParent = uploadedFile.getParentFile();  
+                        	if(!fileParent.exists()){
+                        		fileParent.mkdir();
+                        	}
                         	file.transferTo(uploadedFile);
                         	
                         	//第二种方法
@@ -49,8 +62,9 @@ public class UploadFileUtils {
                             os.flush();
                             is.close();
                             os.close();*/
-                            fileSrc=origName+"#";
-                            System.out.println("保存成功！路径："+rootUrl+"/"+origName);
+                        	
+                            fileSrc=rootUrl+File.separator+newName;
+                            System.out.println("保存成功！路径："+rootUrl+"/"+newName);
                         }catch(Exception e){
                             e.printStackTrace();
                         }

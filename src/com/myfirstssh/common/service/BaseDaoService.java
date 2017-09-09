@@ -9,5 +9,9 @@ public interface BaseDaoService<T> {
 	public T get(Serializable id);
 	
 	public BaseDao getDao();
+		
 
+	public Serializable save(T entity);
+
+	public void update(T entity) ;
 }

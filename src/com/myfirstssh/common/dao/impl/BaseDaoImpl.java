@@ -8,6 +8,7 @@ import java.lang.reflect.ParameterizedType;
 import org.hibernate.SessionFactory;
 import org.hibernate.persister.entity.AbstractEntityPersister;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.myfirstssh.common.dao.BaseDao;
@@ -67,5 +68,14 @@ public abstract class BaseDaoImpl<T> extends HibernateDaoSupport implements Base
 
 			super.setSessionFactory(sessionFactory);
 		}
-
+		
+		@Override
+		public Serializable save(T entity) {
+			Serializable result = this.getHibernateTemplate().save(entity);
+			return result;
+		}
+		@Override
+		public void update(T entity) throws DataAccessException {
+			this.getHibernateTemplate().update(entity);
+		}
 }

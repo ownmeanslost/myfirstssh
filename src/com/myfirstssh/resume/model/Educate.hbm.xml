@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.myfirstssh.resume.model.Educate" table="educate">
+		<id name="Guid" type="string">
+			<column name="Guid" />
+			<generator class="uuid" />
+		</id>
+		<property name="school" type="string" length="100" >
+				<column name="school" >
+                <comment>毕业学校</comment>
+                </column>
+		</property>
+		<property name="major" type="string" length="100" >
+				<column name="major" >
+                <comment>专业</comment>
+                </column>
+		</property>
+		<property name="graducateTime" type="string" length="100" >
+				<column name="graducateTime" >
+                <comment>毕业时间</comment>
+                </column>
+		</property>
+		<property name="educateType" type="string" length="100" >
+				<column name="educateType" >
+                <comment>毕业类型</comment>
+                </column>
+		</property>
+		<property name="userGuid" type="string" length="100" >
+				<column name="userGuid" >
+                <comment>信息主键</comment>
+                </column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -19,7 +19,7 @@ import com.myfirstssh.resume.vo.ResumeClazzVO;
 public class JavaBeanDataSourceFactory {
 	
 	
-	private static  BaseDataSourceFactory getBaseDataSourceFactory(String beanJson,Map<String, Object> parameter){
+	public static  BaseDataSourceFactory getBaseDataSourceFactory(String beanJson,Map<String, Object> parameter){
 		BaseDataSourceFactory baseDataSourceFactory=null;
 		/*{"clazz":"com.vrv.soc.report.service.impl.MapRegionJRDataSourceFactoryImpl",
 		 * "args":[{"index":"1","key":"securityId","clazzType":"java.lang.String"}]}*/

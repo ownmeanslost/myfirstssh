@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="911684aa-12e3-4be9-83d7-325dc0023701">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="8"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="telePhone" class="java.lang.String"/>
+	<parameter name="intention" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="educate" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\VRV\\ireportdemo\\个人简历\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="projectExp" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="kill" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<textField>
+				<reportElement x="112" y="20" width="100" height="20" uuid="858d2ff5-e18d-450a-bffd-dd74cd66e7ab"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="40" width="100" height="20" uuid="9d43524c-8572-4ce5-8b1f-deba8d85db75"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="60" width="100" height="35" uuid="4198c326-2bdd-414c-9076-189428159c5d"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{telePhone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="20" width="100" height="20" uuid="8a97e123-eecd-45ce-950b-c63072e1c46f"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA["意向："$P{intention}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="60" width="100" height="20" uuid="7da4329e-9097-4a2f-a4e1-5475d50c9341"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA["现居地："$P{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="95" width="100" height="20" uuid="96f4ccdd-aff8-41b1-a3c8-713d9f4a427c"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[教育背景]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<subreport>
+				<reportElement x="26" y="0" width="200" height="47" uuid="c1049acb-ecf8-4796-9607-1a78016d5ac1"/>
+				<dataSourceExpression><![CDATA[$P{educate}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report2_educate.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="68">
+			<staticText>
+				<reportElement x="26" y="0" width="100" height="20" uuid="011e38c4-e42d-47f1-8901-e2d09e8bcc1c"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<text><![CDATA[项目&实习相关经历]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="26" y="20" width="200" height="47" uuid="daef4a34-e5a1-4704-8f20-b8f4824b89a6"/>
+				<dataSourceExpression><![CDATA[$P{projectExp}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report2_projectExp.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="72">
+			<staticText>
+				<reportElement x="26" y="0" width="100" height="20" uuid="83c48929-d34b-4fe5-bbd2-e822b381fdf4"/>
+				<text><![CDATA[荣誉与技能]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="26" y="20" width="200" height="52" uuid="6d1750bd-a9ef-4b44-9ceb-3e619d54aae5"/>
+				<dataSourceExpression><![CDATA[$P{kill}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report2_kill.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -70,10 +70,16 @@
         	
             var res = data.response;
             if (res) {
-                alert('上传成功');
+                $.ajax({
+                	 type: 'post',
+ 		            url: contextPath + '/resume/getpdf',
+ 		            data:{"fishId":fishId,
+ 		            		"id":model.id},
+                	
+                });
             }
             else {
-                alert('上传失败')
+                alert('上传失败');
             }
         });
 	}
@@ -103,11 +109,12 @@
 		});
 	events.queryParams = function(params) {
 		var temp = {
-			name:$("#name").val(),
+			username:$("#name").val(),
 			email:$("#email").val(),  
 			telephone:$("#telephone").val(),
+			intention:$("#intention").val(),
 			address:$("#address").val(),
-			schoolName:$("#schoolName").val(),
+			school:$("#schoolName").val(),
 			major:$("#major").val(),
 			graducateTime:$("#graducateTime").val(),
 			educateType:$("#educateType").val(),
@@ -119,7 +126,7 @@
 			tutor:$("#tutor").val(),
 			content:$("#content").val(),
 			projectContent:$('#projectContent').summernote('code'),	
-			killcontent:$("#killcontent").summernote('code')
+			killContent:$("#killcontent").summernote('code')
 		
 		};
 		return temp;

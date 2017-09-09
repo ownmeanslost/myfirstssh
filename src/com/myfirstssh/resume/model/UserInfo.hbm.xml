@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.myfirstssh.resume.model.UserInfo" table="userinfo">
+		<id name="Guid" type="string">
+			<column name="Guid" />
+			<generator class="assigned" />
+		</id>
+		<property name="username" type="string" length="100" >
+				<column name="username" >
+                <comment>用户名</comment>
+                </column>
+		</property>
+		<property name="email" type="string" length="100" >
+				<column name="email" >
+                <comment>邮箱</comment>
+                </column>
+		</property>
+		<property name="telephone" type="string" length="100" >
+				<column name="telephone" >
+                <comment>电话</comment>
+                </column>
+		</property>
+		<property name="intention" type="string" length="100" >
+				<column name="intention" >
+                <comment>工作意向</comment>
+                </column>
+		</property>
+		<property name="address" type="string" length="100" >
+				<column name="address" >
+                <comment>地址</comment>
+                </column>
+		</property>
+		<property name="imgurl" type="string" length="100" >
+				<column name="imgurl" >
+                <comment>个人图片</comment>
+                </column>
+		</property>
+	</class>
+</hibernate-mapping>

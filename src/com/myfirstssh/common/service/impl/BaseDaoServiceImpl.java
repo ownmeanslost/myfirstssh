@@ -18,6 +18,12 @@ public abstract class BaseDaoServiceImpl<T> implements BaseDaoService<T> {
 	}
 
 
+	public Serializable save(T entity){
+		return  (Serializable)getDao().save(entity);
+	};
 
+	public void update(T entity){
+		getDao().update(entity);
+	};
 
 }

@@ -29,9 +29,23 @@
 	href="scripts/bootstrap/css/fileinput.min.css"></link>	
 <jsp:include page="/WEB-INF/scripts/common/common.jsp"></jsp:include>
 
-
+<script type="text/javascript"
+		src="scripts/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="scripts/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript"
+		src="scripts/bootstrap/js/summernote.min.js"></script>
+	<script type="text/javascript"
+		src="scripts/bootstrap/js/summernote-zh-CN.js"></script>
+		<script type="text/javascript"
+		src="scripts/bootstrap/js/fileinput.js"></script>
+		<script type="text/javascript"
+		src="scripts/bootstrap/js/fileinput_locale_zh.js"></script>
 </head>
-
+<script type="text/javascript">
+	var model={};
+	model.id="123456";
+</script>
 <body>
 
 	<h1 class="container">请填写简历上信息</h1>
@@ -144,7 +158,7 @@
 			<div class="form-group">
 				<label for="lastTime" class="control-label col-sm-2 col-xs-2">结束时间</label>
 				<div class="date form_date col-sm-8 col-xs-12" data-date=""
-					data-date-format="dd MM yyyy" data-link-field="dtp_input1"
+					data-date-format="yyyy-mm-dd" data-link-field="dtp_input1"
 					data-link-format="yyyy-mm-dd">
 					<input size="16" type="text" value="" readonly id="lastTime">
 					<span class="add-on"><i class="icon-remove"></i></span> <span
@@ -216,18 +230,6 @@
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript"
-		src="scripts/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
-	<script type="text/javascript"
-		src="scripts/bootstrap/js/bootstrap-datetimepicker.zh-CN.js"></script>
-	<script type="text/javascript"
-		src="scripts/bootstrap/js/summernote.min.js"></script>
-	<script type="text/javascript"
-		src="scripts/bootstrap/js/summernote-zh-CN.js"></script>
-		<script type="text/javascript"
-		src="scripts/bootstrap/js/fileinput.js"></script>
-		<script type="text/javascript"
-		src="scripts/bootstrap/js/fileinput_locale_zh.js"></script>
 	<script type="text/javascript" src="page/resumepage/editresume.js"></script>
 </body>
 </html>

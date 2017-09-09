@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2_projectExp" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="132695bb-7e9c-4d9a-9264-b0ae11d6c41f">
+	<property name="ireport.zoom" value="1.7715610000000015"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="projectName" class="java.lang.String"/>
+	<field name="role" class="java.lang.String"/>
+	<field name="srtartTime" class="java.lang.String"/>
+	<field name="lastTime" class="java.lang.String"/>
+	<field name="projectType" class="java.lang.String"/>
+	<field name="tutor" class="java.lang.String"/>
+	<field name="projectContent" class="java.lang.String"/>
+	<field name="content" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="190" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="e8e00bbf-0b12-45a0-9b2f-ccac25e83e7f"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="100" height="20" uuid="c7fd0d8b-8a5f-41c8-9dbf-9f439db9fc0c"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA["职责：" +$F{role}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="0" width="150" height="20" uuid="27cdcc77-5234-4b3d-8d2e-73401fee15e9"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA["时间："+$F{srtartTime}+"至"+$F{lastTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="74" width="100" height="20" uuid="059b8987-ca0b-4659-ac04-c04d15c322bf"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA["负责内容："+$F{content}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="94" width="555" height="96" uuid="34bdb6f1-b94c-41e2-8b75-475764889e9f"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{projectContent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="33" width="100" height="20" uuid="ea43f352-b12b-4b0a-b33c-902685c43d4d"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tutor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

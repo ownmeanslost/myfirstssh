@@ -30,4 +30,6 @@ public class BookServiceImpl extends BaseDaoImpl<Book>implements BookService {
 		return bookDao.getBookList(cons, pageIndex, pageSize);
 	}
 
+	
+
 }

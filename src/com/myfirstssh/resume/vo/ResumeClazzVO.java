@@ -11,6 +11,8 @@ import java.util.List;
  */
 
 public class ResumeClazzVO {
+	private String clazz;
+	private List<BeanArgsVO> args;
 	public List<BeanArgsVO> getArgs() {
 		return args;
 	}
@@ -19,8 +21,7 @@ public class ResumeClazzVO {
 		this.args = args;
 	}
 
-	private String clazz;
-	private List<BeanArgsVO> args;
+	
 	public String getClazz() {
 		return clazz;
 	}
@@ -29,6 +30,17 @@ public class ResumeClazzVO {
 		this.clazz = clazz;
 	}
 
+	public ResumeClazzVO(String clazz, List<BeanArgsVO> args) {
+		super();
+		this.clazz = clazz;
+		this.args = args;
+	}
+
+	public ResumeClazzVO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 
 
 }

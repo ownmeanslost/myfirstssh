@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.myfirstssh.resume.model.ResumeInfo" table="resumeinfo">
+		<id name="Guid" type="string">
+			<column name="Guid" />
+			<generator class="uuid" />
+		</id>
+		<property name="resumeName" type="string" length="100" >
+				<column name="resumeName" >
+                <comment>模板名名称</comment>
+                </column>
+		</property>
+		<property name="userjavabean" type="string" length="100" >
+				<column name="userjavabean" >
+           
+                </column>
+		</property>
+		<property name="beanjson" type="string" length="255" >
+				<column name="beanjson" >
+                </column>
+		</property>
+		<property name="filename" type="string" length="100" >
+				<column name="filename" >
+                </column>
+		</property>
+		<property name="filepath" type="string" length="100" >
+				<column name="filepath" >
+                <comment>项模板路径</comment>
+                </column>
+		</property>
+	</class>
+</hibernate-mapping>

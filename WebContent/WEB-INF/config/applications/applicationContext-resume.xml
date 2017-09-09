@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	                    
+	                    
+	 <bean id="userInfoDao" class="com.myfirstssh.resume.dao.impl.UserInfoDaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate" />
+	 </bean>
+	  <bean id="userInfoService" class="com.myfirstssh.resume.service.impl.UserInfoServiceImpl"></bean> 
+	  <bean id="educateDao" class="com.myfirstssh.resume.dao.impl.EducateDaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate" />
+	 </bean>
+	  <bean id="educateService" class="com.myfirstssh.resume.service.impl.EducateServiceImpl"></bean> 
+	  <bean id="killDao" class="com.myfirstssh.resume.dao.impl.KillDaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate" />
+	 </bean>
+	  <bean id="killService" class="com.myfirstssh.resume.service.impl.KillServiceImpl"></bean>
+	  <bean id="projectExpDao" class="com.myfirstssh.resume.dao.impl.ProjectExpDaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate" />
+	 </bean>
+	  <bean id="projectExpService" class="com.myfirstssh.resume.service.impl.ProjectExpServiceImpl"></bean>  
+	  <bean id="resumeInfoDao" class="com.myfirstssh.resume.dao.impl.ResumeInfoDaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate" />
+	 </bean>
+	  <bean id="resumeInfoService" class="com.myfirstssh.resume.service.impl.ResumeInfoServiceImpl"></bean>  
+	 
+</beans>	                    

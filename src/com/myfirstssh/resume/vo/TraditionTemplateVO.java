@@ -11,6 +11,7 @@ public class TraditionTemplateVO implements Serializable{
 	String name;
 	String email;
 	String telephone;
+	String intention;
 	String address;
 	String schoolName;
 	String major;
@@ -25,30 +26,12 @@ public class TraditionTemplateVO implements Serializable{
 	String content;
 	String projectContent;
 	String killcontent;
-	public TraditionTemplateVO(String name, String email, String telephone,
-			String address, String schoolName, String major,
-			String graducateTime, String educateType, String startTime,
-			String lastTime, String projectName, String role,
-			String projectType, String tutor, String content,
-			String projectContent, String killcontent) {
-		super();
-		this.name = name;
-		this.email = email;
-		this.telephone = telephone;
-		this.address = address;
-		this.schoolName = schoolName;
-		this.major = major;
-		this.graducateTime = graducateTime;
-		this.educateType = educateType;
-		this.startTime = startTime;
-		this.lastTime = lastTime;
-		this.projectName = projectName;
-		this.role = role;
-		this.projectType = projectType;
-		this.tutor = tutor;
-		this.content = content;
-		this.projectContent = projectContent;
-		this.killcontent = killcontent;
+	
+	public String getIntention() {
+		return intention;
+	}
+	public void setIntention(String intention) {
+		this.intention = intention;
 	}
 	public TraditionTemplateVO() {
 		super();
