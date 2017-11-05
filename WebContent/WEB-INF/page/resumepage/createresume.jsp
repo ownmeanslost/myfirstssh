@@ -29,7 +29,7 @@
 		<h1 >请点击图片</h1>
 			<ul class="thumbnail col-sm-12 col-md-4" >
 				<li >
-				<a href="resume/gotoeditresume"> <img
+				<a href="resume/gotoeditresume?resumeGuid=123456"> <img
 					src="file/resumeimg/2017-08-20_110030.png" alt="通用的占位符缩略图">
 				</a>
 				</li>

@@ -66,5 +66,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itext-pdfa-5.4.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-digester-1.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

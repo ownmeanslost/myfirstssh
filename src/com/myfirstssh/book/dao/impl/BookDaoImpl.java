@@ -26,7 +26,8 @@ public class BookDaoImpl extends BaseDaoImpl<Book>implements BookDao {
 		String countSql = "select count(*) from " + getTableName();
 
 		int beginIndex = (pageIndex) * pageSize;
-		strSql += " limit " + beginIndex + ", " + pageSize;
+		int endIndex=beginIndex+pageSize;
+		strSql += " limit " + beginIndex + ", " + endIndex;
 		List<Map<String, Object>> list = jdbcTemplate.queryForList(strSql);
 
 		int total = jdbcTemplate.queryForInt(countSql);

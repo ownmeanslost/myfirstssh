@@ -21,6 +21,7 @@ import net.sf.jasperreports.engine.JasperRunManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -65,8 +66,9 @@ public class ResumeController {
 	}
 
 	@RequestMapping("/gotoeditresume")
-	public String goToEditResume() {
-
+	public String goToEditResume(HttpServletRequest resqRequest,Model model) {
+		String resumeGuid=resqRequest.getParameter("resumeGuid");
+		model.addAttribute("resumeGuid",resumeGuid);
 		return "resumepage/editresume";
 	}
 
@@ -97,7 +99,7 @@ public class ResumeController {
 	// 图片上传
 	@RequestMapping(value = "/loadpicture", method = RequestMethod.POST)
 	public @ResponseBody
-	String loadPicture(String id, MultipartHttpServletRequest request,
+	Map<String,String> loadPicture(String id, MultipartHttpServletRequest request,
 			@RequestParam MultipartFile[] inputfile) {
 		System.out.println(id);
 		String pictureurl = UploadFileUtils.uploadImage(request, inputfile[0],id);
@@ -110,7 +112,9 @@ public class ResumeController {
 		} else {
 			System.out.println("上传失败！");
 		}
-		return "0";
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		return map;
 
 	}
 
@@ -122,7 +126,7 @@ public class ResumeController {
 		parameters.put("userGuid",userGuid);
 		InputStream in = null;
 		//获得模板jasper文件路径
-		ResumeInfo resumeInfo=resumeInfoService.get(id);
+		ResumeInfo resumeInfo=resumeInfoService.get("123456");
 		String filePath=resumeInfo.getFilepath().replace("/", File.separator);
 		String jasperUrl=filePath+File.separator+resumeInfo.getFilename();
 		//完整路径
@@ -139,8 +143,7 @@ public class ResumeController {
 			servletOutputStream = response.getOutputStream();
 			
 			BaseDataSourceFactory baseDataSourceFactory=JavaBeanDataSourceFactory.getBaseDataSourceFactory(resumeInfo.getBeanjson(), parameters);
-			baseDataSourceFactory.getDefineAllDateSource();
-			//parameters.putAll(m);
+			parameters.putAll(baseDataSourceFactory.getDefineAllDateSource());
 			JasperRunManager.runReportToPdfStream(in, servletOutputStream,
 					parameters, new JREmptyDataSource());
 		} catch (FileNotFoundException e) {
@@ -162,6 +165,12 @@ public class ResumeController {
 	List<ModelPicVO> getModelPic() {
 
 		return null;
+
+	}
+	@RequestMapping("/tt")
+	public String tt() {
+
+		return "/resume/getpdf";
 
 	}
 }

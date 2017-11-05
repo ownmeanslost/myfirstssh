@@ -67,16 +67,16 @@
             return obj;
         }
         }).on("filebatchuploadsuccess", function (event, data) {
-        	
+       
             var res = data.response;
             if (res) {
-                $.ajax({
+            	$(window).attr('location',contextPath+"");
+                /*$.ajax({
                 	 type: 'post',
  		            url: contextPath + '/resume/getpdf',
  		            data:{"fishId":fishId,
- 		            		"id":model.id},
-                	
-                });
+ 		            		"id":model.resumeGuid},
+                });*/
             }
             else {
                 alert('上传失败');
@@ -95,7 +95,7 @@
 		            data: events.queryParams(),
 		            success: function (data) {
 		                fishId = data;
-	
+		              
 		                //不上传图片时，不触发bootstrap 上传插件的初始化方法。仅将表单里面的（除图片以外的）内容提交，
 		                if ($("#inputfile").val() != "") {
 		                    $('#inputfile').fileinput('upload'); //触发插件开始上传。

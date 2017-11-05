@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -44,7 +45,10 @@
 </head>
 <script type="text/javascript">
 	var model={};
-	model.id="123456";
+	(function(){
+	model.resumeGuid=" <c:out default='' value='${resumeGuid}'/>";
+	})();
+	
 </script>
 <body>
 
